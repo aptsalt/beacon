@@ -16,3 +16,5 @@ frontend/dist/
 # local artifacts
 backend/data/feedback.jsonl
 *.log
+
+.vercel

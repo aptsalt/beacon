@@ -54,7 +54,10 @@ mock to live Command + Embed + Rerank.
   you can't use the popular library.
 
 Deep dives: [How it was built](docs/how-it-was-built.md) ·
-[Build evidence receipt](build-evidence.md)
+[Build evidence receipt](build-evidence.md) ·
+[62-second demo video](demo/beacon-demo.mp4)
+([the demo records itself](demo/record-demo.mjs) — a Playwright script drives the
+live deployment with on-screen captions)
 
 ## Stack
 
