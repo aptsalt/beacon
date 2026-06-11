@@ -1,6 +1,8 @@
 import type { BeaconEvent, Rating } from "./types";
 
-const BASE = "http://localhost:8000";
+// Same-origin by default in production (frontend + API behind one host);
+// VITE_API_BASE overrides for split hosting; localhost:8000 for dev.
+const BASE = import.meta.env.VITE_API_BASE ?? (import.meta.env.DEV ? "http://localhost:8000" : "");
 
 export async function decideAction(
   action_id: string,

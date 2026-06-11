@@ -16,4 +16,5 @@ RERANK_MODEL = os.getenv("COHERE_RERANK_MODEL", "rerank-v3.5")
 RETRIEVE_K = 8
 RERANK_K = 4
 
-ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:4173", "http://127.0.0.1:5173"]
+_extra_origins = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", "").split(",") if o.strip()]
+ALLOWED_ORIGINS = ["http://localhost:5173", "http://localhost:4173", "http://127.0.0.1:5173", *_extra_origins]

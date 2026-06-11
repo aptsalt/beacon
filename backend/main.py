@@ -100,7 +100,9 @@ class FeedbackPayload(BaseModel):
     comment: str | None = None
 
 
-_FEEDBACK_PATH = os.path.join(os.path.dirname(__file__), "data", "feedback.jsonl")
+# Serverless filesystems are read-only outside /tmp — fall back there on Vercel.
+_FEEDBACK_PATH = (os.path.join("/tmp", "feedback.jsonl") if os.getenv("VERCEL")
+                  else os.path.join(os.path.dirname(__file__), "data", "feedback.jsonl"))
 
 
 @app.post("/api/feedback")
