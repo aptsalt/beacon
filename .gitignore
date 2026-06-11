@@ -1,0 +1,18 @@
+# env / secrets
+backend/.env
+.env
+*.env.local
+
+# python
+backend/.venv/
+__pycache__/
+*.pyc
+backend/.embed_cache.json
+
+# node
+frontend/node_modules/
+frontend/dist/
+
+# local artifacts
+backend/data/feedback.jsonl
+*.log
